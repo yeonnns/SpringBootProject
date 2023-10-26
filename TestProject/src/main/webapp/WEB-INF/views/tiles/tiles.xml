@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<!-- base tiles layout add -->
+
+	<definition name="base" template="/WEB-INF/views/jsp/layout/baseLayout.jsp">
+		<put-attribute name="header" value="/WEB-INF/views/jsp/common/header.jsp" />
+		<put-attribute name="left" value="/WEB-INF/views/jsp/common/left.jsp" />
+		<put-attribute name="body" value="" /> 
+	</definition>
+	
+	<definition name="noBase" template="/WEB-INF/views/jsp/layout/noBaseLayout.jsp">
+		<put-attribute name="body" value="" />
+	</definition>
+
+
+	<definition name="/user/*" extends="noBase">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/user/{1}.jsp" />
+	</definition>
+	
+	<definition name="/common/error" extends="noBase">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/common/error.jsp" />
+	</definition>
+	
+	<!-- 베이스(접미어가 ?/? 방식인 대상들만 tiles 설정 *은 전체 적용) -->
+	<definition name="/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/{1}.jsp" />
+	</definition>
+	
+	<definition name="/*/*" extends="base">
+		<put-attribute name="body" value="/WEB-INF/views/jsp/{1}/{2}.jsp" />
+	</definition>
+	
+	
+
+
+	
+	
+	
+	
+	
+	
+	
+
+</tiles-definitions>
