@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.UserMapper">
+	
+	<select id="UserInfo" resultType="com.test.dto.UserDto">
+		select	username 
+				,password 	
+				,depth1		
+				,depth2		
+				,position	
+				,depth3		
+				,role		
+				,create_date	as createDate
+				,del_yn		as delYN
+				,delete_date	as deleteDate
+				,is_changed_pw	as changedPw
+				,try_count	as tryCount
+		from 	eins_user
+		where 	username = #{username}
+	</select>
+	
+	<insert id="userInsert">
+		insert into	
+			eins_user(username, password, depth1, depth2, depth3, position, role )
+		values(
+			#{username}, #{password}, "경영기획본부", "개발팀", "김소연", "팀원", "ROLE_ADMIN")
+	</insert>
+	
+	<select id="latestJoin" resultType="com.test.dto.UserDto">
+		select
+			depth3
+			,date_format(create_date, '%Y-%m-%d') createDate
+		from
+			eins_user
+		order by create_date desc
+		limit 4
+	</select>
+	 
+</mapper>
+
