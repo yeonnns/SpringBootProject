@@ -1,0 +1,40 @@
+.content, .content td{
+	font-size: 12px;
+	vertical-align:middle;
+}
+
+.modifyBtn, .saveBtn{
+	padding: 5px 14px;
+	font-size: 12px;
+}
+
+.file-upload{
+	height: 35px;
+	font-size: 12px;
+}
+.table-excel-btn{
+	width: 90%;
+	height: 80%;
+}
+.select-box {
+	width: 100%;
+	padding: 5px;
+	border-radius: 2px;
+    text-align-last: center;
+	text-align: center;
+}
+.table td{
+	border: 1px solid #e9ecef;
+	padding: 8px 12px;
+}
+.all-save-btn{
+	font-size: 12px;
+	padding: 8px 8px;
+}
+#excelUpForm{
+	width: 100%;
+}
+.table-right{
+	width: 60%;
+	float: right;
+}

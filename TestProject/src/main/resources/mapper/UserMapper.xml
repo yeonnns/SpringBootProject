@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.test.mapper.UserMapper">
+
 	
 	<select id="UserInfo" resultType="com.test.dto.UserDto">
 		select	username 
@@ -26,6 +27,7 @@
 			#{username}, #{password}, "경영기획본부", "개발팀", "김소연", "팀원", "ROLE_ADMIN")
 	</insert>
 	
+	
 	<select id="latestJoin" resultType="com.test.dto.UserDto">
 		select
 			depth3
@@ -36,5 +38,62 @@
 		limit 4
 	</select>
 	 
+	 <!-- salary -->
+	 <insert id="salaryInsert" parameterType="com.test.dto.SalaryDto">
+		insert into salary
+		values
+		<foreach collection="list" item="item" separator=" , " >
+		(	
+			(
+			select ifNull(max(sno),0)+1 
+			from salary as sno 
+			)
+			,#{item.username}
+			,#{item.depth1}
+			,#{item.depth2}
+			,#{item.depth3}
+			,#{item.salary}
+			,#{item.grade}
+			,#{item.incentive}
+			,#{item.promotion}
+			,#{item.posPlus}
+			,#{item.smileCash}
+			,#{item.ension}
+			,#{item.healthIns}
+			,#{item.employIns}
+			,#{item.longTermIns}
+			,#{item.incomeTax}
+			,#{item.loincomeTax}
+			,date_format(now(), '%Y-%m-%d')
+		)
+		</foreach>
+	</insert>
+	
+	<select id="getSalaryList" resultType="com.test.dto.SalaryDto">
+		select
+			userName
+			,depth1
+			,depth2
+			,depth3
+			,salary
+			,grade
+			,incentive
+			,promotion
+			,posPlus
+			,smileCash
+			,enSion
+			,healthIns
+			,employIns
+			,longtermIns
+			,incomeTax
+			,loincomeTax 
+		from	salary	
+			<if test="nowMonth != '' and nowMonth != null">
+			where	date_format(create_date, '%Y-%m') = date_format(#{nowMonth}, '%Y-%m')
+			</if>
+		order by sno
+	</select>
+	 
+	
 </mapper>
 
