@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.MessageMapper">
+
+	
+	<select id="selectDepth2" resultType="com.test.dto.UserDto" parameterType="com.test.dto.UserDto">
+		<choose>
+			<when test="depth1 == '경영진' || depth1 == '회계팀'">
+				select	conCat(depth3,' ',position) as name
+						, depth3
+				from	eins_user
+				where	del_yn = 'N'
+			</when>
+			<otherwise>
+				select	distinct(depth2) as depth2
+				from	eins_user
+				where	del_yn = 'N'
+				and depth1 = #{depth1}
+				<choose>
+					<when test="depth1 == '마케팅실' || depth1 == '커머스실' || depth1 == '미디어실'">
+						order by field(position,'실장') desC 
+					</when>				
+					<when  test="depth1 == '경영기획실'">
+						order by depth2
+					</when>				
+				</choose>
+			</otherwise>
+		</choose>
+	</select>
+	
+	<select id="selectDepth3" resultType="com.test.dto.UserDto" parameterType="com.test.dto.UserDto" >
+		select	conCat(depth3,' ',position) as name
+				, depth3
+		from	eins_user
+		where	del_yn = 'N'
+		and depth2 = #{depth2}
+		order by field(position,'팀장') desC
+		, depth3
+	</select>
+
+	<select id="selectIdName" resultType="com.test.dto.UserDto" parameterType="com.test.dto.UserDto" >
+		select	group_concat(depth3,'(',userName,')') as emailId
+				,group_concat(userName) as username
+		from	eins_user
+		where	depth3 in 
+		<foreach collection="nameList" item="item" index="index" separator="," open="(" close=")">
+			#{item}		
+		</foreach>
+	</select>
+
+	<select id="selectReceiveMsg" resultType="com.test.dto.MessageDto" parameterType="com.test.dto.MessageDto">
+		select	no
+				,depth1
+				,depth2,
+				position
+				,conCat(depth3,'(',send_id ,')') sendId
+				,title
+				,content
+				,is_read isRead
+				,b.create_date createDate
+		from	eins_user as a inner join message b	on a.username = b.send_id
+		where	receive_id = #{userName}
+		and is_show = "Y"
+		and type = "receive"
+		order by b.create_date desC
+	</select>
+
+</mapper>
+

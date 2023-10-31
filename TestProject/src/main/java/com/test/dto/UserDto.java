@@ -1,9 +1,13 @@
 package com.test.dto;
 
+import java.util.List;
+
 import lombok.Data;
 
 @Data
 public class UserDto {
+	private List<String> nameList; // 알람에서 이름 id로 변환할때 사용
+	private List<String> idList; // 변환된 id 
 	private String emailId;
 	private String username;
 	private String password;

@@ -1,0 +1,195 @@
+@charset "UTF-8";
+#contents {
+	height: 460px;
+    font-size: 13px;
+    resize: none;
+	min-height: 32px;
+	padding: 3px 6px;
+	float: right;
+	width: 100%;
+    border: 1px solid #cfcfcf;
+}
+
+.w70p{
+	width: 70%;
+}
+.h500{
+	height: 500px;
+}
+.mh300{
+	min-height: 300px;
+}
+.h100p{
+	height: 100%;
+}
+
+#sendId {
+    width: 100%;
+    overflow: hidden;
+    height: 32px;
+    min-height: 32px;
+    padding: 3px 6px;
+    border: none;
+}
+textarea{
+	overflow : hidden;
+	resize:none;
+	overflow-x: hidden;
+    overflow-wrap: break-word;
+    margin :0px;
+    white-space:pre-wrap;
+    width : 100%;
+    border: 1px solid #cfcfcf;
+    resize:vertical;
+    padding: 3px 6px;
+}
+.fa-plus{
+	color : grey;
+}
+.fa-plus, .fa-minus{
+	margin-right : 3px;
+}
+.card-body {
+    padding: 20px 30px;
+    color : grey;
+}
+.form-check-input {
+    width: 1.1em;
+    height: 1.1em;
+}
+.overA{
+	overflow: auto;
+}
+.add {
+    position: absolute;
+    top: 45%;
+    left: 32.8%;
+}
+.del {
+    position: absolute;
+    top: 55%;
+    left: 32.8%;
+}
+.w11p{
+	width : 11%;
+}
+input, textarea {
+	font-size : 10pt;
+}
+#recNameId{
+	width: 100%;
+	overflow: hidden;
+	height: 32px;
+	min-height: 32px;
+	padding: 3px 6px;
+    border: 1px solid #cfcfcf;
+}
+.noBold{
+	font-weight :normal!important;
+}
+.padding0{
+	padding-top : 0px!important;
+}
+
+/* 하단표 */
+
+
+#dataTableMessage > thead > tr > td {
+	border-top : 2px solid;
+	border-bottom : 2px solid;
+/* 	background : rgba(0, 0, 0, 0.05); */
+	font-weight :bold;
+	
+}
+
+#dataTableMessage > thead > tr > td{
+	text-align : center!important;
+	
+}
+#dataTableMessage_filter {
+	margin: 23px 115px 10px 0px;
+	
+}
+#dataTableMessage_filter > label{
+	float : left;
+}
+#dataTableMessage_filter > label > input{
+	width : 70%;
+}
+
+#dataTableMessage_paginate {
+	float: none;
+	display: inline-block;
+	margin: 10px 0px;
+}
+table.dataTable tbody td{
+	padding : 3px!important;
+	border-bottom : 1px solid rgba(0, 0, 0, 0.3);
+}
+table.dataTable.no-footer {
+    border-bottom: none!important;
+}
+#dataTableMessage_paginate > span > a{
+	border-radius: 15%;
+    font-size: 9pt;
+   	background : rgba(230, 230, 230, 0.1);
+}
+
+.delBtn{
+	border-radius: 4px;
+	margin-top : 23px;
+    right: 18.5%;
+    position: absolute;
+    font-size: 10pt;
+    background: #ff5252;
+    color: white;
+    padding: 6px;
+}
+.readBtn{
+	border-radius: 4px;
+	margin-top : 23px;
+    right: 23%;
+    position: absolute;
+    font-size: 10pt;
+    background: #448aff;;
+    color: white;
+    padding: 6px;
+}
+.texbox{
+	display:flex;
+    flex-direction: row;
+    width : 100%;
+}
+
+.contentArea{
+	min-height: 1.5rem;
+    width: 65%;
+    overflow: hidden;
+    height: 10px;
+    border: none;
+    resize: none;
+    font-size: 12px;
+    background-color: transparent;
+    padding: 3px 6px;
+	
+}
+.contentArea:focus {
+        outline: none;
+}
+.openMessage{
+	font-size: 11px;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 5px;
+    position : absolute;
+    float : right;
+}
+.textbox{
+    flex-direction: row;
+}
+
+.z100{
+	z-index : 100;
+}
+
+
