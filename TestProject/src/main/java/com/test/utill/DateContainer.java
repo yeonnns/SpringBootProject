@@ -55,7 +55,7 @@ public class DateContainer {
 		return formatter.format(c.getTime());
 	}
 
-	// 어제 날짜 (리포트 배치용)
+	// 어제 날짜 
 	public static Long getYesterdayDate() {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMdd");
 		Calendar c = Calendar.getInstance();
@@ -107,7 +107,7 @@ public class DateContainer {
 		return formatter.format(c.getTime());
 	}
 
-//	이번주 월요일
+	// 이번주 월요일
 	public static String getMondayFromDay(String yyyymmdd) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -138,7 +138,7 @@ public class DateContainer {
 	}
 
 	
-//	이번주 일요일
+	// 이번주 일요일
 	public static String getSundayFromDay(String yyyymmdd) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -170,7 +170,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-	//저번주 월요일
+	// 저번주 월요일
 	public static String getBeforeMondayFromDay(String yyyymmdd) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -202,7 +202,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-//	저번주 일요일
+	// 저번주 일요일
 	public static String getBeforeSundayFromDay(String yyyymmdd) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -234,7 +234,7 @@ public class DateContainer {
 		return setDate;
 	}
 	
-	//이번주 월요일
+	// 이번주 월요일
 	public static String getNowMondayFromDay(String yyyymmdd) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -265,7 +265,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-//	이번주 일요일
+	// 이번주 일요일
 	public static String getNowSundayFromDay(String yyyymmdd) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -316,9 +316,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-	/**
-	 * 이전달 1일
-	 */
+	// 이전달 1일
 	public static String getBeforeMonthStart(String yyyymmdd, int addMonth) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -335,9 +333,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-	/**
-	 * 이전달 마지막 날짜
-	 */
+	// 이전달 마지막 날짜
 	public static String getBeforeMonthEnd(String yyyymmdd, int addMonth) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -355,9 +351,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-	/**
-	 * 이번달 1일
-	 */
+	// 이번달 1일
 	public static String getNowMonthStart(String yyyymmdd) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -375,9 +369,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-	/**
-	 * 이번달 마지막 날짜
-	 */
+	// 이번달 마지막 날짜
 	public static String getNowMonthEnd(String yyyymmdd) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -395,9 +387,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-	/**
-	 * 이번달 첫번째 월요일
-	 */
+	// 이번달 첫번째 월요일
 	public static String getNowMonthFirstMonday(String yyyymmdd) {
 		yyyymmdd = getNowMonthStart(yyyymmdd);
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
@@ -423,9 +413,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-	/**
-	 * 다음달 첫번째 일요일
-	 */
+	// 다음달 첫번째 일요일
 	public static String getNextMonthFirstSunday(String yyyymmdd) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -450,11 +438,7 @@ public class DateContainer {
 		return setDate;
 	}
 
-	/**
-	 * @Author : PJW
-	 * @Date : 2020. 8. 7.
-	 * @Description : 해당 달의 일 수 구하기 (파라미터 "yyyy-mm")
-	 */
+	// 해당 달의 일 수 구하기 (파라미터 "yyyy-mm")
 	public static int getDayCntMonth(String date) {
 		date = date.replaceAll("-", "");
 		int year = Integer.parseInt(date.substring(0, 4));
@@ -474,11 +458,7 @@ public class DateContainer {
 		return days;
 	}
 
-	/**
-	 * @Author : PJW
-	 * @Date : 2020. 8. 10.
-	 * @Description : 요일구하기 (파라미터 : "yyyy-mm-dd")
-	 */
+	// 요일구하기 (파라미터 : "yyyy-mm-dd")
 	public static String getDayOfWeek(String date) {
 		date = date.replaceAll("-", "");
 		int yyyy = Integer.parseInt(date.substring(0, 4));
@@ -516,11 +496,7 @@ public class DateContainer {
 		return korDayOfWeek;
 	}
 
-	/**
-	 * @Author : PJW
-	 * @Date : 2020. 8. 12.
-	 * @Description : 해당 범위의 날짜 수 (네이버 통합리포트 -> 종합 -> 운영일수)
-	 */
+	// 해당 범위의 날짜 수
 	public static Integer getDayCntDayw(String startDate, String endDate) {
 		startDate = startDate.replaceAll("-", "");
 		endDate = endDate.replaceAll("-", "");
@@ -544,12 +520,10 @@ public class DateContainer {
 			count++;
 			cal2.add(Calendar.DATE, 1);
 		}
-//		System.out.println("기준일로부터 " + count + "일이 지났습니다.");
-
 		return count;
 	}
 	
-	//int week주일 전 월요일 Get
+	// int week주일 전 월요일 Get
 	public static String getFiveBeforeMondayFromDay(String yyyymmdd, int week) {
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
 		int yyyy = Integer.parseInt(yyyymmdd.substring(0, 4));
@@ -581,7 +555,7 @@ public class DateContainer {
 		return setDate;
 	}
 	
-	//두 날짜의 개월차이
+	// 두 날짜의 개월차이
 	public static int getMonthDiff(String bigDate, String smallDate) {
 		int monthDiff=0;
 		bigDate = bigDate.replaceAll("-", "");
@@ -604,7 +578,7 @@ public class DateContainer {
 		monthDiff = c.compareTo(c2);
 		return monthDiff;
 	}
-	//두 날짜 사이의 날짜 리스트
+	// 두 날짜 사이의 날짜 리스트
 	public static ArrayList<String> getDateDiffList(String startDate, String endDate) {
 		ArrayList<String> resultArr = new ArrayList<String>();
 		
@@ -647,8 +621,7 @@ public class DateContainer {
 		return resultArr;
 	}
 	
-	
-	//yyyymmdd 에서 day 만큼 뺀 날짜
+	// yyyymmdd 에서 day 만큼 뺀 날짜
 	public static String getDecimalDate(String yyyymmdd, int day) {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
@@ -662,7 +635,7 @@ public class DateContainer {
  		return formatter.format(c.getTime());
 	}
 	
-	//yyyymmdd 에서 day 만큼 뺀 월
+	// yyyymmdd 에서 day 만큼 뺀 월
 	public static String getMonthSubtrack(String yyyymmdd, int month) {
 		SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
 		yyyymmdd = yyyymmdd.replaceAll("-", "");
@@ -676,7 +649,7 @@ public class DateContainer {
 		return formatter.format(c.getTime());
 	}
 	
-	//두 날짜 사이의 월 리스트
+	// 두 날짜 사이의 월 리스트
 	public static ArrayList<String> getMonthDiffList(String startDate, String endDate) {
 		ArrayList<String> resultArr = new ArrayList<String>();
 		
