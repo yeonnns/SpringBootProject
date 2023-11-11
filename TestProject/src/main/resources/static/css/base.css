@@ -1,0 +1,399 @@
+/* main 디스플레이 */
+
+.bsolute;{
+	position:  absolute;
+}
+.inblock {
+	display: inline-block;
+}
+.inblock2 {
+	display: inline-block;
+	margin-left:auto;
+	margin-right:auto;
+	max-width:980px;
+}
+.block{
+	display: block;
+	
+}
+.imgbox {
+	width:200px;
+	height: 200px;
+}
+
+.previewbox {
+	width:300px;
+	height: 300px;
+	text-align:center;
+}
+.preview{
+	width:230px;
+	height: 230px;
+}
+
+.mainbox {
+	margin-left:auto;
+	margin-right:auto;
+	max-width:800px;
+}
+
+.topimg{
+	width:1500px; 
+	height:350px;
+}
+
+.center {
+	text-align:center;
+	float : center;
+}
+
+.lfloat {
+	float:left!important;
+	text-align:left!important;
+	width:100%;
+}
+.lfloat2{
+	float:left!important;
+	margin-left : 5%;
+}
+.lfloat3{
+	text-align : left;
+}
+
+.rfloat {
+	float:right!important;
+	text-align:right!important;
+	width:100%;
+	display : inline-block;
+}
+.rfloat2 {
+	float:right!important;
+	margin-right : 5%;
+}
+.rfloat3 {
+	float:right!important;
+}
+
+.button {
+	cursor:pointer;
+}
+
+.button:hover {
+	color:white;
+	font-weight:bold;
+	padding : 3px;
+}
+
+.box {
+	width : 1000px;
+	heigt : 500px;
+	
+}
+
+.center2{
+	text-align:center;
+}
+.right{
+	text-align:right;
+}
+.left{
+	text-align:left;
+}
+
+/* 글씨 */
+.ligreyh {
+	color:white;
+	background-color:#f1f1f1;
+}
+.ligreyhb {
+	color:black;
+	background-color:#f1f1f1;
+}
+
+.bblacgrey {
+	color:grey;
+	background-color:black;
+}
+
+.cgrey {
+	color:grey;
+}
+.lalign {
+	text-align:left;
+}
+.ralign {
+	text-align:right;
+}
+.f6 {
+}
+.f8 {
+	font-size : 8pt;
+}
+.f10 {
+	font-size : 10pt;
+}
+.f11 {
+	font-size : 11pt;
+}
+.f12 {
+	font-size : 12pt;
+}
+.f15 {
+	font-size : 15pt;
+}
+.f20 {
+	font-size : 20pt;
+}
+.f25 {
+	font-size : 25pt;
+}
+.bold{
+	font-weight:bold;
+}
+
+/* 마진(테두리와박스-밖)패딩(콘텐츠와 테두리-안) */
+
+.mg20 {
+	margin : 20px;
+}
+.mg0 {
+	margin-top: opx;
+	margin-bottom :0px;	
+}
+
+.mg5 {
+	margin-top: 5px;
+	margin-bottom :5px;	
+}
+.mgb100 {
+	margin-bottom : 100px;
+}
+.pda0 {
+	padding : 0px;
+}
+
+.pda3 {
+	padding : 3px;
+}
+
+.pda5 {
+	padding : 5px;
+}
+
+.pda10 {
+	padding : 10px;
+}
+
+.pdbase {
+	padding : 8px 16px!important;
+}
+
+.pdbbase2 {
+	padding : 8px 30px;
+}
+
+.mgpdt {
+	margin-top: 100px;
+	padding-top: 100px;
+}
+
+.mgt10{
+	margin-top: 10px;
+}
+.mgt20{
+	margin-top: 20px;
+}
+.mgt30{
+	margin-top: 30px !important;
+}
+.mgt50{
+	margin-top: 50px;
+}
+.mgt100{
+	margin-top: 100px;
+}
+.mgb100{
+	margin-bottom: 100px;
+}
+.mgb200{
+	margin-bottom: 200px;
+}
+.mgb50{
+	margin-bottom: 50px;
+}
+.mgb20{
+	margin-bottom: 20px;
+}
+.mgb10{
+	margin-bottom: 10px;
+}
+.mgb8{
+	margin-bottom: 8px;
+}
+.mgl20{
+	margin-left: 20px;
+}
+.mgl25{
+	margin-left: 25px;
+}
+.mgl30{
+	margin-left: 30px;
+}
+.mgl35{
+	margin-left: 35px;
+}
+.mgl40{
+	margin-left: 40px;
+}
+.mgl50{
+	margin-left: 50px;
+}
+.mgtp4{
+	margin-top: -6px;
+    padding: 4px;
+}
+
+/* 배경색 */
+
+bblack {
+	background-color : black;
+}
+
+blgrey {
+	background-color : light-grey;
+}
+
+/* 가로크기 */
+
+.w50 {
+	width : 50px;
+}
+.w80 {
+	width : 80px;
+}
+.w100 {
+	width : 100px;
+}
+
+.w200 {
+	width : 200px;
+}
+.w250 {
+	width : 250px;
+}
+.w300 {
+	width : 300px;
+}
+.w350 {
+	width : 350px;
+}
+.w400 {
+	width : 400px;
+}
+.w500 {
+	width : 500px;
+}
+
+.w70p {
+	width : 70%;
+}
+.w81p {
+	width : 81%;
+}
+.w85p {
+	width : 85%;
+}
+.w100p {
+	width : 100%!important;
+}
+
+.fif{
+	width : 20%;
+}
+
+.third {
+	width : 33%;
+}
+.half {
+	width : 50%;
+}
+
+/* 세로크기 */
+
+.h100 {
+	height : 100px;
+}
+
+.h200 {
+	height : 100px;
+}
+
+.h300 {
+	height : 100px;
+}
+
+.border{
+	border: 1px solid #cfcfcf!important;
+}
+
+/* crawling */
+
+.upblue{
+	color : blue;	
+}
+
+.downred{
+	color : red;	
+}
+
+
+/* 깜빡이 */
+.blinking{
+  -webkit-animation: blink 0.8s ease-in-out infinite alternate;
+  -moz-animation: blink 0.8s ease-in-out infinite alternate;
+  animation: blink 0.8s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes blink{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes blink{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes blink{
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+.point {
+	cursor:pointer;
+}
+
+.newMsg{
+	width : 20%;
+	padding : 10px;
+	margin : 5px;
+	text-align : center;
+	color: grey;
+    font-size: 12pt;
+    background: rgba(230, 230, 230, 0.4);
+    border-radius: 5px;
+    border : 5px solid rgba(230, 230, 230, 1);
+    position : absolute;
+    top: 80px;
+    left: 40%;
+    z-index: 2;
+}
+
+#newIcon,#newIcon2 {
+	padding : 0px!important;
+    margin: -5px!important;
+    font-size: 8pt!important;
+	text-align : right;
+	color : white;
+	cursor: pointer;
+}

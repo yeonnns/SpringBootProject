@@ -42,4 +42,31 @@ public class MessageController {
 		return mv;
 	}
 	
+	@RequestMapping("/chatting")
+	public ModelAndView chatting(ModelAndView mv, MessageDto messageDto, @AuthenticationPrincipal UserDetails user) {
+		mv.setViewName("/message/chatting");
+		return mv;
+	}
+	
+	
+	@RequestMapping("/chattingTest")
+	public ModelAndView chattingTest(ModelAndView mv, ChatDto mgDto, @AuthenticationPrincipal UserDetails user) {
+		String userName = user.getUsername();
+		ArrayList<ChatRoomDto> chatRoomList = messageService.selectChatRoomList(userName);
+
+		if(mgDto.getRoomNo() != 0) {
+			ArrayList<ChatDto> chatList = messageService.selectMgList(1);
+			ChatRoomDto chatRDetail = messageService.selectChatRDetail(1);
+			mv.addObject("room", mgDto.getRoomNo());
+			mv.addObject("chatList", chatList);
+			mv.addObject("chatRDetail", chatRDetail);
+		}
+		
+		mv.addObject("chatRoomList", chatRoomList);
+		mv.setViewName("/message/chattingTest");
+		return mv;
+	}
+	
+	
+	
 }

@@ -1,0 +1,181 @@
+.loginbody{
+	background-color: #212529;
+}
+
+.loginbtn {
+    color: #fff;
+    background-color: #212529;
+    border-color: #212529;
+}
+
+.whiteCol {
+	color:white;
+	padding-top: 0.75rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+    font-size:11pt;
+}
+.color1 {
+	background-color: rgba(72, 59, 222, 1);
+}
+.color2 {
+	background-color: rgba(216, 212, 3, 1);
+}
+.color3 {
+	background-color: rgba(71, 159, 4, 1);
+}
+.color4 {
+	background-color: rgba(222, 86, 59, 1);
+}
+.startC {
+	background-color: white;
+	color : grey;
+	margin-top : 7px;
+	padding : 5px;
+	width: 60px;
+    height: 30px;
+    font-size : 9pt;
+    border-color: #ccc !important;
+}
+
+.excelC {
+	background-color: white;
+	color : grey;
+	margin-top : 7px;
+	padding : 5px;
+	width: 100px;
+    height: 30px;
+    font-size : 10pt;
+    border-color: #ccc !important;
+    float : right;
+}
+
+/* mail 관련 */
+.setting-div{
+	position: relative;
+	width: 100%;
+	margin-bottom: 15px;
+}
+.textarea-name{
+	position: absolute;
+	top: 4px;
+    margin: 0;
+    font-size : 10pt;
+}
+.txt{
+	margin: 0 32px 0 108px;
+    width: auto;
+}
+.txt-title{
+	margin: 0 0 0 108px;
+    width: auto;
+}
+.addr-text{
+	width: 100%;
+	overflow: hidden;
+	height: 32px;
+	min-height: 32px;
+	padding: 3px 6px;
+	font-size: 13px;
+    border: 1px solid #cfcfcf;
+}
+.address-book{
+	position: absolute;
+    display: inline-block;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #cfcfcf;
+    border-left: 0;
+    padding-top: 5px;
+}
+#title, #receiveId{
+	width: 100%;
+	overflow: hidden;
+	height: 32px;
+	min-height: 32px;
+	padding: 3px 6px;
+    border: 1px solid #cfcfcf;
+}
+.card-body{
+	padding: 20px 50px;
+}
+
+/* salary */
+
+.form-control {
+    font-size: 14px!important;
+    border-radius: 2px;
+    border: 1px solid #cccccc;
+    padding : 3px!important;
+    background-color: white !important;
+}
+.input-group-addon {
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.25;
+    color: #495057;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,.15);
+    border-radius: 0.25rem;
+    margin : 0px!important;
+    background-color: white !important;
+}
+.readonly[readonly] {
+    background-color: white !important;
+}
+.ui-widget-content {
+    border: 1px solid #ddd;
+    background: #fff;
+    color: #333;
+}
+
+.bd{
+	border: 1px solid #cfcfcf!important;
+	font-size : 10pt!important;
+}
+.input-group{
+	background-color: white !important;
+ 	display: flex;
+    width: 100%;
+    position: relative;
+}	 
+.excelUp{
+	font-size : 10pt!important;
+	border: 1px solid #ddd;
+	padding : 3px!important;
+}
+
+.dataTable-sorter{
+	font-size : 12px;
+}
+
+#datatablesSimple > tbody  {
+	font-size : 12px;
+}
+#datatablesSimple > thead > tr > th {
+	font-size : 12px;
+}
+#datatablesSimple_filter > label > input[type=search]{
+	padding: 4px!important;
+	width : 200px;
+}
+div.dt-buttons{
+	float : right!important;
+}
+.buttons-excel{
+	padding: 0.4em 0.5em!important;
+	font-size : 9pt!important;
+	margin-left : 5px!important;
+}
+.dataTables_filter {
+	font-size : 11pt!important;
+	}
+#datatablesSimple_paginate{
+	text-align : center!important;
+	float : none!important;
+	font-size : 11pt!important;
+}
+

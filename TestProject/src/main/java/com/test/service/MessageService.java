@@ -70,4 +70,40 @@ public class MessageService {
 	public int updateMsgDel(MessageDto mDto) {
 		return messageRepository.updateMsgDel(mDto.getNoList());
 	}
+	  
+	
+	// chatting
+	public ArrayList<ChatDto> selectMgList(int roomNo) {
+		List<ChatEntity> list = chatRepository.selectJoinChatList(1);
+		ArrayList<ChatDto> chatList = new ArrayList<ChatDto>();
+		for(ChatEntity cen : list) {
+			chatList.add(new ChatDto(cen));
+		}
+		for(int i = 0; i<chatList.size(); i++) {
+			String date = chatList.get(i).getCreateDate();
+			date = date.replace("-", "/").substring(5,16);	
+			chatList.get(i).setCreateDate(date);
+		}
+		return chatList;
+	}
+	
+	public ArrayList<ChatRoomDto> selectChatRoomList(String userName) {
+		List<ChatRoomEntity> list = chatRoomRepository.selectChatRoomList(userName);
+		ArrayList<ChatRoomDto> chatRoomList = new ArrayList<ChatRoomDto>();
+		for(ChatRoomEntity cen : list) {
+			chatRoomList.add(new ChatRoomDto(cen));
+		}
+		return chatRoomList;
+	}
+	public ChatRoomDto selectChatRDetail(int roomNo) {
+		ChatRoomEntity list = chatRoomRepository.selectChatRDetail(roomNo);
+		ChatRoomDto chatRoomList = new ChatRoomDto(list);
+		
+		return chatRoomList;
+	}
+	// insert
+	public void insertChat(ChatDto cDto) {
+		cDto.setCreateDate(DateContainer.getNowDateTimeSecond());
+		chatRepository.save(cDto.toEntity());
+	}
 }
