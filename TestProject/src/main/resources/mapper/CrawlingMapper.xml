@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.CrawlingMapper">
+
+	<insert id="stockInsert">
+		insert into stock_report (
+			stock_name , present_price, previous_day_diffrent, fluctuation_rate, far_value, trading_value, high_price, low_price, market_capitalization, return_on_equity, return_on_assets, create_date)
+		values
+		<foreach collection="list" item="item" separator=",">
+		(
+			#{item.stockName}
+			,#{item.presentPrice}
+			,#{item.prevDayDiff}
+			,#{item.fluctuationRate}
+			,#{item.farValue}
+			,#{item.tradingValue}
+			,#{item.highPrice}
+			,#{item.lowPrice}
+			,#{item.marketCap}
+			,#{item.roe}
+			,#{item.roa}
+			,date_format(now(), '%Y-%m-%d')
+		)
+		</foreach>
+	</insert>
+	
+	<select id="stockList" resultType="com.test.dto.StockDto" parameterType="com.test.dto.StockDto">
+	select	stock_name stockName
+			,present_price presentPrice
+			,if(previous_day_diffrent != "0",previous_day_diffrent, "-") prevDayDiff
+			,if(fluctuation_rate!= "0.00",fluctuation_rate, "-") fluctuationRate
+			,far_value farValue
+			,trading_value tradingValue
+			,high_price highPrice
+			,low_price lowPrice
+			,market_capitalization marketCap
+			,return_on_equity roe
+			,return_on_assets roa
+			,date_format(create_date, '%Y-%m-%d') createDate
+	from	stock_report
+	where
+	<if test="createDate == null">
+		create_date = (select max(create_date) from stock_report)
+	</if>
+	<if test="createDate != null">
+		date_format(create_date, '%Y-%m-%d') = date_format(#{createDate}, '%Y-%m-%d')
+	</if>
+	order by	create_date
+	</select>
+
+	<select id="latestDate" resultType="String">
+		select	max(date_format(create_date, '%Y-%m-%d')) createDate
+		from	stock_report
+	</select>
+	
+	
+	<insert id="insertTodayTop">
+		insert into		stock_procedure_test(
+						create_date
+						,stock_nameH
+						,last_high_price
+						,last_high_per
+						,stock_nameL
+						,last_low_price
+						,last_low_per 
+						)
+		select	a.create_date
+				,a.stock_name
+				,a.previous_day_diffrent
+				,a.fluctuation_rate
+				,b.stock_name
+				,b.previous_day_diffrent
+				,b.fluctuation_rate
+		from
+			(
+			select stock_name, previous_day_diffrent ,fluctuation_rate, DATE_FORMAT(create_date, '%Y-%m-%d') create_date
+			from stock_report
+			where create_date = date_format(now(), '%Y-%m-%d')
+			and fluctuation_rate LIKE '%+%'	
+			group by stock_name
+			order by cast(previous_day_diffrent as signed integer) desC
+			limit 1
+			) a
+		join
+			(
+			select stock_name, previous_day_diffrent ,fluctuation_rate
+			from stock_report
+			where create_date = date_format(now(), '%Y-%m-%d')
+			and fluctuation_rate LIKE '%-%'	
+			group by stock_name
+			order by cast(previous_day_diffrent as signed integer) desC
+			limit 1
+			)b;
+
+	</insert>
+	
+	<select id="selectWeekTop" resultType="com.test.dto.StockDto" >
+		select	conCat(date_format(create_date,'%m/%d')," (" ,stock_nameH ,")") stockNameH
+				,last_high_price lastHighPrice
+				,last_high_per lastHighPer
+				,conCat(date_format(create_date,'%m/%d')," (" ,stock_NameL ,")") stockNameL
+				,last_low_price lastLowPrice
+				,last_low_per lastLowPer
+				,date_format(create_date,'%Y-%m-%d') createDate
+		from	
+			(
+			select *
+			from stock_procedure_test
+			order by create_date desC
+			limit 7
+			)a
+		order by create_date asc
+	</select>
+
+</mapper>
+

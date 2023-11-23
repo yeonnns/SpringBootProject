@@ -27,6 +27,35 @@
 			#{username}, #{password}, "경영기획본부", "개발팀", "김소연", "팀원", "ROLE_ADMIN")
 	</insert>
 	
+	<select id="SalesInfo" resultType="com.test.dto.SalesDto">
+		select	 i.depth1 as depth1
+				 ,i.depth2 as depth2
+				 ,i.depth3 as depth3
+				 ,i.position as position
+				 ,s.username as username
+				 ,date_format(s.create_date, '%Y-%m-%d') as createDate
+				 ,price
+				 ,channel
+				 ,sellershop
+		from	days_sales s
+		left join	eins_user i on i.username = s.username
+		order by	price desc, s.create_date desc
+	</select>
+	
+	<select id="daySales" resultType="int">
+		select	sum(price) price
+		from	days_sales
+		where 	create_date between '2022-10-01' and '2022-10-31'	
+		group by create_date
+	</select>
+	
+	<select id="monthSales" resultType="int">
+		select	sum(price) as price
+		from	days_sales
+		group by month(create_date)
+		order by month(create_date)
+	</select>
+	
 	
 	<select id="latestJoin" resultType="com.test.dto.UserDto">
 		select
