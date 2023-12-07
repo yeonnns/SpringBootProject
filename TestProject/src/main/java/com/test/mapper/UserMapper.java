@@ -10,6 +10,9 @@ public interface UserMapper {
 
 	public UserDto UserInfo(String username);
 	public int userInsert(UserDto userDto);
+	public ArrayList<SalesDto> SalesInfo();
+	public int[] daySales();
+	public int[] monthSales();
 	public ArrayList<UserDto> latestJoin();
 	// salary
 	public int salaryInsert(ArrayList<SalaryDto> list);

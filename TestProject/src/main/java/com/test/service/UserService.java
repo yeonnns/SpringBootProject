@@ -15,6 +15,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import com.test.config.PrincipalDetails;
+import com.test.dto.SalesDto;
 import com.test.dto.UserDto;
 import com.test.mapper.UserMapper;
 
@@ -91,6 +92,15 @@ public class UserService implements UserDetailsService {
 	
 	public int userInsert(UserDto userDto) {
 		return userMapper.userInsert(userDto);
+	}
+	public ArrayList<SalesDto> SalesInfo() {
+		return userMapper.SalesInfo();
+	}
+	public int[] daySales() {
+		return userMapper.daySales();
+	}
+	public int[] monthSales() {
+		return userMapper.monthSales();
 	}
 	public ArrayList<UserDto> latestJoin() {
 		return userMapper.latestJoin();

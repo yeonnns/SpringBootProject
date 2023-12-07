@@ -22,7 +22,10 @@ import org.springframework.web.servlet.ModelAndView;
 import com.test.dto.SalesDto;
 import com.test.dto.UserDto;
 import com.test.service.CodeService;
+import com.test.service.FileService;
 import com.test.service.UserService;
+import com.twocaptcha.TwoCaptcha;
+import com.twocaptcha.captcha.Normal;
 
 @Component
 @Controller
@@ -35,7 +38,13 @@ public class MainController{
 	private UserService userService;
 	
 	@Autowired
+	private FileService FileService;
+	
+	@Autowired
 	private CodeService codeService;
+	
+	@Autowired
+	private BCryptPasswordEncoder bcryptPasswordEncoder;
 	
 	@RequestMapping(value = "/" )
 	public ModelAndView main(Authentication auth) {
@@ -44,7 +53,9 @@ public class MainController{
 		mv.addObject("auth", auth);
 		
 	
+		ArrayList<SalesDto> sale = userService.SalesInfo();
 		ArrayList<UserDto> latestJoin = userService.latestJoin();
+		mv.addObject("sales", sale);		
 		mv.addObject("latestJoin", latestJoin);		
 		
 		mv.setViewName("/main");
