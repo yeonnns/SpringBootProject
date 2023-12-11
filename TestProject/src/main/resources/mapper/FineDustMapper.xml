@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.FineDustMapper">
+
+	<insert id="insertFineDust">
+		insert into fine_dust (
+			so2Grade , so2Value, coGrade, coValue, no2Grade, no2Value, o3Grade, o3Value, khaiGrade, khaiValue, pm10Grade, pm10Value, pm25Grade, pm25Value, sidoName, dataTime, stationName)
+		values
+		<foreach collection="list" item="item" separator=",">
+		(
+			#{item.so2Grade},#{item.so2Value},#{item.coGrade},#{item.coValue},#{item.no2Grade},#{item.no2Value},#{item.o3Grade},#{item.o3Value},#{item.khaiGrade},#{item.khaiValue},#{item.pm10Grade},#{item.pm10Value},#{item.pm25Grade},#{item.pm25Value},#{item.sidoName},#{item.dataTime},#{item.stationName}
+		)
+		</foreach>
+	</insert>
+	
+</mapper>
+
