@@ -7,17 +7,14 @@
 <script>
 </script>
 <style>
-#pcoded{
-	min-width: 1280px;
-	/* overflow-x: auto; */
-}
 </style>
 </head>
-<body style="overflow: auto">
-<div id="pcoded" class="pcoded">
-    	<tiles:insertAttribute name="header" />
-	 	<tiles:insertAttribute name="left" />
-		<tiles:insertAttribute name="body" />
+<body>
+<div>
+   	<tiles:insertAttribute name="header" />
+ 	<tiles:insertAttribute name="left" />
+	<tiles:insertAttribute name="loading" />
+	<tiles:insertAttribute name="body" />
 </div>
 </body>
 </html>

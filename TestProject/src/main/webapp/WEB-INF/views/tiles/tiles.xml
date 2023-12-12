@@ -5,10 +5,10 @@
 <tiles-definitions>
 
 	<!-- base tiles layout add -->
-
 	<definition name="base" template="/WEB-INF/views/jsp/layout/baseLayout.jsp">
 		<put-attribute name="header" value="/WEB-INF/views/jsp/common/header.jsp" />
 		<put-attribute name="left" value="/WEB-INF/views/jsp/common/left.jsp" />
+		<put-attribute name="left" value="/WEB-INF/views/jsp/common/loading.jsp" />
 		<put-attribute name="body" value="" /> 
 	</definition>
 	
@@ -33,16 +33,4 @@
 	<definition name="/*/*" extends="base">
 		<put-attribute name="body" value="/WEB-INF/views/jsp/{1}/{2}.jsp" />
 	</definition>
-	
-	
-
-
-	
-	
-	
-	
-	
-	
-	
-
 </tiles-definitions>
