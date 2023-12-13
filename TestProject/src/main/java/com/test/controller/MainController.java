@@ -24,8 +24,6 @@ import com.test.dto.UserDto;
 import com.test.service.CodeService;
 import com.test.service.FileService;
 import com.test.service.UserService;
-import com.twocaptcha.TwoCaptcha;
-import com.twocaptcha.captcha.Normal;
 
 @Component
 @Controller
@@ -117,4 +115,20 @@ public class MainController{
 		mv.setViewName("/user/login");
 		return mv;
 	}
+	
+	@RequestMapping(value = "/mailForm")
+	public ModelAndView mailForm() {
+		logger.info("#########mailForm");
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/mail/mailForm");
+		return mv;
+	}
+	@RequestMapping(value = "/mailTemplate")
+	public ModelAndView mailTemplate() {
+		logger.info("#########mailTemplate");
+		ModelAndView mv = new ModelAndView();
+		mv.setViewName("/mail/mailTemplate");
+		return mv;
+	}
+
 }

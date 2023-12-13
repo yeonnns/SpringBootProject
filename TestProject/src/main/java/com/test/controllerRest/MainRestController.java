@@ -44,4 +44,12 @@ public class MainRestController{
 		mv.addObject("result", monthSales);
 		return mv;
 	}
+	
+	@RequestMapping(value = "/mailSend")
+	public ModelAndView mailSend(MailSendDto mDto) {
+		ModelAndView mv = new ModelAndView("jsonView");
+		boolean result = mailService.sendMail(mDto);
+		mv.addObject("result", result);
+		return mv;
+	}
 }
