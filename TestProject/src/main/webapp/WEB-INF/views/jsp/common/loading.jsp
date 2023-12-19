@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="${cssPath}/css/common.css"/>
+<link rel="stylesheet" type="text/css" href="${cssPath}/common.css"/>
 </head>
 <body>
 	<div class="wrap-loading-box display-none">
