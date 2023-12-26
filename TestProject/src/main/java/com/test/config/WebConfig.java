@@ -22,20 +22,16 @@ public class WebConfig implements  WebMvcConfigurer{
                 .addPathPatterns("/board/**");
     }
     */
-	/*
 	//크로스 도메인 설정
 	@Override
 	public void addCorsMappings(CorsRegistry registry) {
-		// TODO Auto-generated method stub
-		registry.addMapping("/**").allowedOrigins("*");
+		registry.addMapping("/**")
+		.allowedOrigins("*")
+		.allowedMethods("GET", "POST", "PUT", "DELETE")
+        .allowedHeaders("Authorization", "Content-Type")
+        .exposedHeaders("Custom-Header")
+        .allowCredentials(true)
+        .maxAge(3600);
 	}
-	
-	
-	// 파일 경로
-	
-	  @Override public void addResourceHandlers(ResourceHandlerRegistry registry) {
-	  registry.addResourceHandler("/upload/**").addResourceLocations(
-	  "file:///C:/resource/"); }
-	 */
 }
 

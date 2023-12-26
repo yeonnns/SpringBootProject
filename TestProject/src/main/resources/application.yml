@@ -22,6 +22,15 @@ spring:
     multipart:
       max-file-size: 3000MB
       max-request-size: 3000MB
+  ssl:
+    enabled: true
+    key-alias: testkeystore
+    key-store: testkeystore.pkcs12
+    key-store-password: '@test123@'
+    key-password: '@test123@'
+    trust-store: testtrust.pkcs12
+    trust-store-password: '@test123@'     
+   
  
 server:
   port: 8080

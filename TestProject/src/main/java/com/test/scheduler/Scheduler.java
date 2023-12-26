@@ -29,6 +29,12 @@ public class Scheduler {
 		crawlingService.insertTodayTop();
 		logger.info("#########stockList scheduler finish");
 	}
-	
 
+	//@Scheduled(cron = "0 0 10 * * *")
+	public void fineDustInsert() throws Exception {
+		logger.info("#########fineDust scheduler start");
+		weatherService.fineDustInsert();
+		logger.info("#########fineDust scheduler finish");
+	}
+	
 }
